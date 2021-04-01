@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>*{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display:flex;
+        }
+        .bear{
+            display: block;
+        }
+        .bear > .head{
+            position: absolute;
+            margin-top:150px;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            background:#ebb44e;
+            width: 400px;
+            height: 300px;
+            border-radius: 200px/150px;
+            z-index: 1;
+        }
+        
+        .bear > .head > .left-ear{
+            transform: rotateX(30deg);
+            position: relative;
+            margin-top: -40px;
+            width:100px ;
+            height: 120px;
+            border-radius:50px/60px;
+            background: #d88b1e;
+            border:20px solid #ebb44e;
+        }
+        
+        @keyframes wave{
+            0%{
+                transform: rotate(0deg);
+            }
+            25%{
+                transform: rotate(15deg);
+            }
+            50%{
+                transform: rotate(0deg);
+            }
+            75%{
+                transform: rotate(-15deg);
+            }   
+            100%{
+                transform: rotate(0deg);
+            }
+        }
+        @keyframes change{
+            0%{
+                transform: scale(1);
+            }
+            50%{
+                transform: scale(1.5);
+            }
+            100%{
+                transform: scale(1);
+            }
+        }
+        .bear > .head > .right-ear{
+            transform: translateX(300px) rotateX(-30deg);
+            position: relative;
+            margin-top: -120px;
+            width:100px ;
+            height: 120px;
+            border-radius:50px/60px;
+            background: #d88b1e;
+            border:20px solid #ebb44e;
+        }
+        .bear > .head > .left-eye{
+            position: relative;
+            margin-top: 30px;
+            margin-left: 60px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: black;
+        }
+        .bear > .head > .left-ear:hover{
+            transform-origin: 50% 100%;
+            animation: wave 2000ms infinite linear;
+        }
+        .bear > .head > .right-eye{
+            position: relative;
+            margin-top: -50px;
+            margin-left: 270px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: black;
+        }
+        .bear > .head > .nose{
+            background: #b1792a;
+            margin-top: -20px;
+            margin-left: 130px;
+            border: 1px solid black;
+            width: 120px;
+            height: 110px;
+            border-radius: 60px/55px;
+        }
+        .bear > .head > .nose > .noseup{
+            margin-top: 10px;
+            margin-left: 30px;
+            background: black;
+            width: 60px;
+            height: 50px;
+            border-radius: 30px/25px;
+        }
+        .bear > .head > .nose > .nosedown{
+            margin-top: -10px;
+            margin-left: 55px;
+            background: black;
+            width: 10px;
+            height: 30px;
+        }
+        .bear > .head > .left-face{
+            margin-top: -60px;
+            margin-left: 20px;
+            background: rgb(226, 68, 68);
+           width: 80px;
+           height: 40px; 
+           border-radius: 40px/20px;
+        }
+        .bear > .head > .right-face{
+            margin-top: -40px;
+            margin-left: 290px;
+            background: rgb(226, 68, 68);
+           width: 80px;
+           height: 40px; 
+           border-radius: 40px/20px;
+        }
+        .bear > .trunk{
+            z-index: 0;
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: #ebb44e;
+            margin-top: 300px;
+            margin-left: 50%;
+            transform: translateX(-50%);
+        }
+        .bear > .trunk > .belly{
+            margin-top: 160px;
+            margin-left: 50px;
+            width: 300px;
+            height: 240px;
+            border-radius: 70% / 100% 100% 0 0;
+            background: wheat;
+        }
+        .bear > .trunk > .belly .heart{
+            z-index: 0;
+            transform:translateX(80px) translateY(20px) rotateZ(-45deg);
+            width: 100px;
+            height: 100px;
+            background: red;
+            padding:0 20px;
+            line-height: 100px;
+        }
+        .bear > .trunk > .belly .heart:hover{
+            transform-origin: 50% 100%;
+            animation: change 2000ms infinite linear;
+        }
+        .bear > .trunk > .belly .heart > .left{
+            transform: translateX(28px) translateY(1px);
+            width: 98px;
+            height: 98px;
+            border-radius: 50%;
+            background: red;
+        }
+        .bear >.left-hand{
+            background: #ebb44e;
+            z-index: 1;
+            transform: translateY(430px) translateX(600px) rotateZ(-60deg);
+            width: 80px;
+            height: 90px;
+            border-radius: 80% / 0 0 100% 100%;
+            border-bottom: 1px solid black;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+        }
+        .bear >.right-hand{
+            background: #ebb44e;
+            z-index: 1;
+            transform: translateY(350px) translateX(810px) rotateZ(70deg);
+            width: 80px;
+            height: 90px;
+            border-radius: 80% / 0 0  100% 100%;
+            border-bottom: 1px solid black;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+        }
+        .bear > .trunk > .belly .heart > .right{
+            transform: translateX(-21px) translateY(-138px);
+            width: 98px;
+            height: 98px;
+            border-radius: 50%;
+            background: red;
+        }
+        .bear > .trunk > .belly .heart > .text{
+            color: wheat;
+            font-size: 36px;
+            transform: translateY(-210px);
+        }</style>
+    <title>bear</title>
+</head>
+<body>
+    <div class="bear">
+        
+        <div class="head">
+            <div class="left-ear">
+                <div class="inear"></div>
+            </div>
+            <div class="right-ear">
+            </div>
+            <div class="left-eye"></div>
+            <div class="right-eye"></div>
+            <div class="nose">
+                <div class="noseup"></div>
+                <div class="nosedown"></div>
+            </div>
+            <div class="left-face"></div>
+            <div class="right-face"></div>
+        </div>
+        <div class="trunk">
+            <div class="belly">
+                <div class="heart">
+                    <div class="left">
+                    </div>
+                    <div class="right">
+                        <div class="hand"></div>
+                    </div>
+                    <div class="text">Love</div>
+                </div>
+            </div>
+        </div>
+        <div class="left-hand"></div>
+        <div class="right-hand"></div>
+    </div>
+</body>
+</html>
